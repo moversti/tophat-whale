@@ -1,26 +1,32 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Fragment} from 'react'
+import {Switch,Route} from 'react-router-dom'
+import './App.scss';
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import ProductList from './components/ProductList'
+import Cart from './components/Cart'
+import About from './components/About'
+import Details from './components/Details'
+import Contact from './components/Contact'
+import JotainMeniPieleen from './components/JotainMeniPieleen'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render(){
+    return (
+      <Fragment>
+        <Navbar />
+        <Switch>
+          <Route exact path='/' component={ProductList}/>
+          <Route path='/kori' component={Cart} />
+          <Route path='/about' component={About} />
+          <Route path='/contact' component={Contact} />
+          <Route path='/details' component={Details} />
+          <Route component={JotainMeniPieleen} />
+        </Switch>
+        <Footer />
+      </Fragment>
+  )}
 }
 
 export default App;
