@@ -21,7 +21,7 @@ class App extends React.Component {
           <Route path='/kori' component={Cart} />
           <Route path='/about' component={About} />
           <Route path='/contact' component={Contact} />
-          <Route path='/details' component={Details} />
+          <Route path='/details/:id' component={Details} />
           <Route component={JotainMeniPieleen} />
         </Switch>
         <Footer />

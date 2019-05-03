@@ -1,6 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import logo from '../logo.svg';
+import {ProductConsumer} from '../context'
+
 function Navbar(){
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -11,9 +13,16 @@ function Navbar(){
             <Link to='/about' className="nav-link">
             Tietoa meistä
             </Link>
-            <Link to='/kori' className="nav-link">
-            Ostoskori (0)
-            </Link>
+            <ProductConsumer>
+                {value=>{
+                    return (
+                        <Link to='/kori' className="nav-link">
+                        Ostoskori ({value.cart.length})
+                        </Link>
+                    )
+                }}
+            </ProductConsumer>
+
         </nav>
     )
 }
