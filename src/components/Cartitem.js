@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {ProductConsumer} from '../context'
 
 export default function Cartitem({product}){
     return (
@@ -10,13 +11,22 @@ export default function Cartitem({product}){
                 </Link>
             </td>
             <td>
-            {product.price}
+            {product.price} EUR
             </td>
             <td>
-            {product.count}
+                <ProductConsumer>
+                    {value=>{
+                        return(
+                        <React.Fragment>
+                            <button className='btn btn-primary' onClick={()=>{value.minusOne(product.id)}}>-</button>
+                            <button disabled className='btn mx-2 border border-dark'>{product.count}</button>
+                            <button className='btn btn-primary' onClick={()=>{value.plusOne(product.id)}}>+</button>
+                        </React.Fragment>)
+                    }}
+                </ProductConsumer>
             </td>
             <td>
-            {product.total}
+            {product.total} EUR
             </td>
         </tr>
     )

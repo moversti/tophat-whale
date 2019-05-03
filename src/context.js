@@ -25,6 +25,26 @@ class ProductProvider extends React.Component{
         }
     }
 
+    plusOne=(id)=>{
+        let cartCopy=JSON.parse(JSON.stringify(this.state.cart))
+        let index = cartCopy.findIndex((p)=>{
+            return p.id===id
+        })
+        cartCopy[index].count=cartCopy[index].count+1
+        cartCopy[index].total+=cartCopy[index].price
+        this.setState({cart:cartCopy})
+    }
+
+    minusOne=(id)=>{
+        let cartCopy=JSON.parse(JSON.stringify(this.state.cart))
+        let index = cartCopy.findIndex((p)=>{
+            return p.id===id
+        })
+        cartCopy[index].count=cartCopy[index].count-1
+        cartCopy[index].total-=cartCopy[index].price
+        this.setState({cart:cartCopy})
+    }
+
     constructCartMap = (cart) => {
         let map={}
         cart.forEach((p)=>{
@@ -35,7 +55,7 @@ class ProductProvider extends React.Component{
 
     handleAddtoCart = id =>{
         // find product array id
-        let productsCopy=[...this.state.products]
+        let productsCopy=JSON.parse(JSON.stringify(this.state.products))
         let index = productsCopy.findIndex((p)=>{
             return p.id===id
         })
@@ -74,7 +94,9 @@ class ProductProvider extends React.Component{
         <ProductContext.Provider value={{
             ...this.state,
             handleAddtoCart:this.handleAddtoCart,
-            emptyCart:this.emptyCart
+            emptyCart:this.emptyCart,
+            plusOne:this.plusOne,
+            minusOne:this.minusOne
         }}>
             {this.props.children}
         </ProductContext.Provider>)
