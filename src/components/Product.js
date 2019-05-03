@@ -15,9 +15,9 @@ export default function Product(props){
                             {value => {
                                 return (
                                     <button 
-                                    disabled={props.product.inCart}
+                                    disabled={value.cartMap[props.product.id] ? true : false}
                                     className='btn btn-primary' onClick={()=>{value.handleAddtoCart(iidee)}}>
-                                    {props.product.inCart?'Korissa':'Lisää koriin'}
+                                    {value.cartMap[props.product.id]?'Korissa':'Lisää koriin'}
                                     </button>
                                 )
                             }}
