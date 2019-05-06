@@ -4,7 +4,7 @@ function Footer(){
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-light fixed-bottom">
             <span className='mr-auto'>&#169;Mikko Översti 2019</span>
-            <Link to='/contact' className="nav-link">
+            <Link to='/tophat-whale/contact' className="nav-link">
             Ota yhteyttä
             </Link>
         </nav>
