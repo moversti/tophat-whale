@@ -7,11 +7,11 @@ export default function Cart(){
         <div>
             <ProductConsumer>
                 {value=>{
-                    return value.cart.length>0 ? <table className='table'><thead><th>Tuote</th><th>Hinta</th><th>Määrä</th><th>Yhteensä</th></thead>
+                    return value.cart.length>0 ? <table className='table'><thead><tr><th>Tuote</th><th>Hinta</th><th>Määrä</th><th>Yhteensä</th></tr></thead>
                     <tbody>
 
                     {value.cart.map((p)=>{
-                        return <Cartitem product={p} />
+                        return <Cartitem key={p.id} product={p} />
                     })}
 
                     </tbody>
