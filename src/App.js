@@ -17,11 +17,11 @@ class App extends React.Component {
       <Fragment>
         <Navbar />
         <Switch>
-          <Route exact path='/' component={ProductList}/>
-          <Route path='/kori' component={Cart} />
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/details/:id' component={Details} />
+          <Route exact path='/tophat-whale/' component={ProductList}/>
+          <Route path='/tophat-whale/kori' component={Cart} />
+          <Route path='/tophat-whale/about' component={About} />
+          <Route path='/tophat-whale/contact' component={Contact} />
+          <Route path='/tophat-whale/details/:id' component={Details} />
           <Route component={JotainMeniPieleen} />
         </Switch>
         <Footer />

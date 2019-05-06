@@ -6,7 +6,7 @@ export default function Cartitem({product}){
     return (
         <tr>
             <td>
-                <Link to={'/details/'+product.id}>
+                <Link to={'/tophat-whale/details/'+product.id}>
                     {product.title}
                 </Link>
             </td>
