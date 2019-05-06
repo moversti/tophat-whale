@@ -53,6 +53,14 @@ class ProductProvider extends React.Component{
         return map
     }
 
+    cartTotal = () => {
+        let sum=0
+        this.state.cart.forEach((p)=>{
+            sum += p.total
+        })
+        return sum
+    }
+
     handleAddtoCart = id =>{
         // find product array id
         let productsCopy=JSON.parse(JSON.stringify(this.state.products))
@@ -96,7 +104,8 @@ class ProductProvider extends React.Component{
             handleAddtoCart:this.handleAddtoCart,
             emptyCart:this.emptyCart,
             plusOne:this.plusOne,
-            minusOne:this.minusOne
+            minusOne:this.minusOne,
+            cartTotal:this.cartTotal
         }}>
             {this.props.children}
         </ProductContext.Provider>)

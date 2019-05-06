@@ -18,9 +18,9 @@ export default function Cartitem({product}){
                     {value=>{
                         return(
                         <React.Fragment>
-                            <button className='btn btn-primary' onClick={()=>{value.minusOne(product.id)}}>-</button>
+                            <button className='btn btn-danger' disabled={product.count<1 ? 'true' : false} onClick={()=>{value.minusOne(product.id)}}>-</button>
                             <button disabled className='btn mx-2 border border-dark'>{product.count}</button>
-                            <button className='btn btn-primary' onClick={()=>{value.plusOne(product.id)}}>+</button>
+                            <button className='btn btn-success' onClick={()=>{value.plusOne(product.id)}}>+</button>
                         </React.Fragment>)
                     }}
                 </ProductConsumer>

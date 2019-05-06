@@ -20,6 +20,11 @@ export default function Cart(){
             </ProductConsumer>
             <ProductConsumer>
                 {value=>{
+                    return value.cart.length>0 ? <div><button className='btn btn-info mr-5 ml-3 px-4 float-right'>Osta</button><h5 className='float-right'>Yhteensä {value.cartTotal()} EUR</h5></div> : null
+                }}
+            </ProductConsumer>
+            <ProductConsumer>
+                {value=>{
                     return value.cart.length>0 ? <button className="btn btn-danger mx-5 mt-5" onClick={value.emptyCart}>Tyhjennä ostoskori</button> : <h3>Ostoskori tyhjä</h3>
                 }}
             </ProductConsumer>
