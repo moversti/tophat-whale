@@ -13,6 +13,9 @@ function Navbar() {
       <Link to="/about" className="nav-link">
         Tietoa meistä
       </Link>
+      <Link to="/login" className="nav-link">
+        Kirjaudu sisään
+      </Link>
       <ProductConsumer>
         {value => {
           return (
