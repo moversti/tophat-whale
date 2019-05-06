@@ -1,7 +1,4 @@
 [![Build Status](https://travis-ci.com/moversti/tophat-whale.svg?branch=master)](https://travis-ci.com/moversti/tophat-whale)
-
-[Hosted version](http://moversti.github.io/tophat-whale)
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
