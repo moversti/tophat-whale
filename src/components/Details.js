@@ -65,14 +65,6 @@ function getCursorPos(e) {
     }
 }
 
-function removeMagnifier(){
-    let glass = document.getElementById('glass');
-    if(glass){
-        glass.parentElement.removeChild(glass)
-    }
-    
-}
-
 class Details extends React.Component{
 
     constructor({match}){
@@ -104,7 +96,7 @@ class Details extends React.Component{
                 <div className='container my-5'>
                     <div className='row'>
                         <div className='col-md'>
-                            <img className='px-3 py-3 border' id='image' src={'/'+this.state.detail.img} style={{maxWidth:'100%'}} alt='Product image' />
+                            <img className='px-3 py-3 border' id='image' src={'/'+this.state.detail.img} style={{maxWidth:'100%'}} alt={this.state.detail.title} />
                         </div>
                         <div className='col-md'>
                             <h2>{this.state.detail.title}</h2>
