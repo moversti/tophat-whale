@@ -105,9 +105,14 @@ class Details extends React.Component {
 
   componentDidMount() {
     let d = this.getDetails(this.id);
-    this.setState(s => {
-      return { detail: d };
-    });
+    this.setState(
+      s => {
+        return { detail: d };
+      },
+      () => {
+        magnify('image', 2.5);
+      }
+    );
   }
   render() {
     return (
@@ -138,13 +143,6 @@ class Details extends React.Component {
             );
           }}
         </ProductConsumer>
-        <script>
-          {
-            (window.onload = function() {
-              magnify('image', 2);
-            })
-          }
-        </script>
       </React.Fragment>
     );
   }

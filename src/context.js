@@ -31,7 +31,11 @@ class ProductProvider extends React.Component {
     });
     cartCopy[index].count = cartCopy[index].count + 1;
     cartCopy[index].total += cartCopy[index].price;
-    this.setState({ cart: cartCopy });
+    this.setState({ cart: cartCopy }, () => {
+      if (localStorage) {
+        localStorage.setItem('cart', JSON.stringify(this.state.cart));
+      }
+    });
   };
 
   minusOne = id => {
@@ -41,7 +45,11 @@ class ProductProvider extends React.Component {
     });
     cartCopy[index].count = cartCopy[index].count - 1;
     cartCopy[index].total -= cartCopy[index].price;
-    this.setState({ cart: cartCopy });
+    this.setState({ cart: cartCopy }, () => {
+      if (localStorage) {
+        localStorage.setItem('cart', JSON.stringify(this.state.cart));
+      }
+    });
   };
 
   constructCartMap = cart => {
