@@ -8,7 +8,7 @@ import { ProductProvider } from './context';
 
 ReactDOM.render(
   <ProductProvider>
-    <BrowserRouter>
+    <BrowserRouter basename="/tophat-whale">
       <App />
     </BrowserRouter>
   </ProductProvider>,

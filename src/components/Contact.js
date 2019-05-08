@@ -24,7 +24,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="container d-flex flex-column">
+    <div className="container">
       <h4 className="my-3">Ota yhteyttä</h4>
       <form>
         <div className="form-group">
