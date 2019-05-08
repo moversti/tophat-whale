@@ -4,6 +4,16 @@ import { ProductConsumer, ProductContext } from '../context';
 import firebase from '../firebase';
 
 class Cart extends React.Component {
+  state = {
+    sent: false
+  };
+
+  handleOrder = () => {
+    this.pushOrder();
+    this.context.emptyCart();
+    this.setState({ sent: true });
+  };
+
   pushOrder = () => {
     const ref = firebase.database().ref('orders');
     const cart = {};
@@ -16,6 +26,11 @@ class Cart extends React.Component {
   render() {
     return (
       <div>
+        {this.state.sent ? (
+          <div className="alert alert-success" role="alert">
+            Tilaus lähetetty!
+          </div>
+        ) : null}
         <ProductConsumer>
           {value => {
             return value.cart.length > 0 ? (
@@ -44,7 +59,7 @@ class Cart extends React.Component {
                 <button
                   className="btn btn-info mr-5 ml-3 px-4 float-right"
                   onClick={() => {
-                    this.pushOrder();
+                    this.handleOrder();
                   }}
                 >
                   Osta
