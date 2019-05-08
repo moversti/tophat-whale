@@ -5,6 +5,22 @@ export default function Contact() {
   const [nimi, setNimi] = useState('');
   const [email, setEmail] = useState('');
   const [palaute, setPalaute] = useState('');
+  const [sent, setSent] = useState(false);
+
+  function sendContact(e) {
+    e.preventDefault();
+    let ref = firebase.database().ref('contact');
+    const contactItem = {
+      nimi: nimi,
+      email: email,
+      palaute: palaute
+    };
+    ref.push(contactItem);
+    setNimi('');
+    setEmail('');
+    setPalaute('');
+    setSent(true);
+  }
 
   function handleChange(e) {
     const target = e.target;
@@ -20,12 +36,20 @@ export default function Contact() {
       case 'palaute':
         setPalaute(value);
         break;
+      default:
+        break;
     }
   }
 
   return (
     <div className="container">
       <h4 className="my-3">Ota yhteyttä</h4>
+      {sent ? (
+        <div className="alert alert-success" role="alert">
+          Palaute lähetetty!
+        </div>
+      ) : null}
+
       <form>
         <div className="form-group">
           <label>Nimi</label>
@@ -63,6 +87,7 @@ export default function Contact() {
           value="Lähetä"
           className="btn btn-primary"
           placeholder="Mitä asiaa?"
+          onClick={sendContact}
         />
       </form>
     </div>

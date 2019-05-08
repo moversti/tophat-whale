@@ -7,7 +7,8 @@ class ProductProvider extends React.Component {
   state = {
     products: storeProducts,
     cart: [],
-    cartMap: {}
+    cartMap: {},
+    basename: '/tophat-whale'
   };
 
   componentDidMount() {

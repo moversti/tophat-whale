@@ -4,13 +4,19 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { ProductProvider } from './context';
+import { ProductProvider, ProductConsumer } from './context';
 
 ReactDOM.render(
   <ProductProvider>
-    <BrowserRouter basename="/tophat-whale">
-      <App />
-    </BrowserRouter>
+    <ProductConsumer>
+      {value => {
+        return (
+          <BrowserRouter basename={value.basename}>
+            <App />
+          </BrowserRouter>
+        );
+      }}
+    </ProductConsumer>
   </ProductProvider>,
   document.getElementById('root')
 );
