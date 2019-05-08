@@ -2,12 +2,10 @@
   "name": "tophat-whale",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://moversti.github.io/tophat-whale",
+  "homepage": "https://tophat-whale.web.app",
   "dependencies": {
-    "bluebird": "^3.5.4",
     "bootstrap": "^4.3.1",
     "firebase": "^5.11.1",
-    "gh-pages": "^2.0.1",
     "husky": "^2.2.0",
     "jquery": "^3.4.0",
     "lint-staged": "^8.1.6",
