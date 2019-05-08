@@ -126,7 +126,7 @@ class Details extends React.Component {
                     <img
                       className="px-3 py-3 border"
                       id="image"
-                      src={'/tophat-whale/' + this.state.detail.img}
+                      src={'/' + this.state.detail.img}
                       style={{ maxWidth: '100%' }}
                       alt={this.state.detail.title}
                     />
