@@ -1,0 +1,20 @@
+logging in user
+
+logging in admin account
+
+user views own orders
+
+admin views orders
+
+admin views contacts
+
+products to firebase/something other
+
+firebase database rules
+
+firebase api keys not to git
+
+cart saved to logged in user settings in firebase
+
+
+
