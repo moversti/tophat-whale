@@ -23,17 +23,18 @@ class App extends React.Component {
         <ProductConsumer>
           {value => (value.message.length > 0 ? <Message /> : null)}
         </ProductConsumer>
-
-        <Switch>
-          <Route exact path="/" component={ProductList} />
-          <Route path="/kori" component={Cart} />
-          <Route path="/about" component={About} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/details/:id" component={Details} />
-          <Route path="/login" component={Login} />
-          <Route path="/order" component={Order} />
-          <Route component={JotainMeniPieleen} />
-        </Switch>
+        <div className="flex-grow-1">
+          <Switch>
+            <Route exact path="/" component={ProductList} />
+            <Route path="/kori" component={Cart} />
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/details/:id" component={Details} />
+            <Route path="/login" component={Login} />
+            <Route path="/order" component={Order} />
+            <Route component={JotainMeniPieleen} />
+          </Switch>
+        </div>
         <Footer />
       </Fragment>
     );
