@@ -29,6 +29,8 @@ class Order extends React.Component {
     });
     cart.nimi = this.state.nimi;
     cart.osoite = this.state.osoite;
+    cart.date = new Date().toISOString();
+    cart.total = this.context.cartTotal();
     ref.push(cart);
   };
 
