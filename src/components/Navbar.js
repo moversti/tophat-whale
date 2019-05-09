@@ -11,7 +11,7 @@ function Navbar() {
         <span className="d-none d-md-inline">Tophat Whale</span>
       </Link>
       <button
-        class="navbar-toggler"
+        className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#navbarToggler"
