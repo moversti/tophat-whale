@@ -11,7 +11,7 @@ export default function Message() {
           return (
             <button
               type="button"
-              class="close"
+              className="close"
               onClick={() => value.setMessage('')}
               data-dismiss="alert"
               aria-label="Close"
