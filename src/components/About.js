@@ -8,7 +8,8 @@ export default function About() {
         yritykseltä.
       </h4>
       <h5>
-        Huom: Ei oikeasti <span role="img" aria-label="just kidding" />&#x1F61C;
+        Huom: Ei oikeasti <span role="img" aria-label="just kidding" />
+        &#x1F61C;
       </h5>
     </div>
   );

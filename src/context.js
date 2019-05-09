@@ -8,8 +8,11 @@ class ProductProvider extends React.Component {
     products: storeProducts,
     cart: [],
     cartMap: {},
-    basename: '/'
+    basename: '/',
+    message: ''
   };
+
+  setMessage = m => this.setState({ message: m });
 
   componentDidMount() {
     if (localStorage) {
@@ -118,7 +121,8 @@ class ProductProvider extends React.Component {
           emptyCart: this.emptyCart,
           plusOne: this.plusOne,
           minusOne: this.minusOne,
-          cartTotal: this.cartTotal
+          cartTotal: this.cartTotal,
+          setMessage: this.setMessage
         }}
       >
         {this.props.children}

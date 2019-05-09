@@ -1,26 +1,11 @@
 import React from 'react';
 import Cartitem from './Cartitem';
 import { ProductConsumer, ProductContext } from '../context';
-import firebase from '../firebase';
+import { Link } from 'react-router-dom';
 
 class Cart extends React.Component {
   state = {
     sent: false
-  };
-
-  handleOrder = () => {
-    this.pushOrder();
-    this.context.emptyCart();
-    this.setState({ sent: true });
-  };
-
-  pushOrder = () => {
-    const ref = firebase.database().ref('orders');
-    const cart = {};
-    this.context.cart.forEach(i => {
-      cart[i.id] = i;
-    });
-    ref.push(cart);
   };
 
   render() {
@@ -56,14 +41,11 @@ class Cart extends React.Component {
           {value => {
             return value.cart.length > 0 ? (
               <div>
-                <button
-                  className="btn btn-info mr-5 ml-3 px-4 float-right"
-                  onClick={() => {
-                    this.handleOrder();
-                  }}
-                >
-                  Osta
-                </button>
+                <Link to="/order">
+                  <button className="btn btn-info mr-5 ml-3 px-4 float-right">
+                    Tilaamaan
+                  </button>
+                </Link>
                 <h5 className="float-right">
                   Yhteensä {value.cartTotal()} EUR
                 </h5>
