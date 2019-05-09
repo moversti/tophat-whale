@@ -12,8 +12,6 @@ products to firebase/something other
 
 firebase database rules
 
-firebase api keys not to git
-
 cart saved to logged in user settings in firebase
 
 

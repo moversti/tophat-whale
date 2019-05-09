@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 const firebaseConfig = {
-  apiKey: 'AIzaSyBAJHdF_ZikzyK0X-U6AjZyDpJCbEcSnds',
+  apiKey: process.env.FIREBASE_API,
   authDomain: 'tophat-whale.firebaseapp.com',
   databaseURL: 'https://tophat-whale.firebaseio.com',
   projectId: 'tophat-whale',
