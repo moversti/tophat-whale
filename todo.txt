@@ -14,5 +14,5 @@ firebase database rules
 
 cart saved to logged in user settings in firebase
 
-
+use formik in forms
 

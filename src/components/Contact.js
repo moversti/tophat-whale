@@ -86,7 +86,6 @@ export default function Contact() {
           type="submit"
           value="Lähetä"
           className="btn btn-primary"
-          placeholder="Mitä asiaa?"
           onClick={sendContact}
         />
       </form>

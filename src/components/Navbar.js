@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
 import { ProductConsumer } from '../context';
+import 'bootstrap';
 
 function Navbar() {
   return (
