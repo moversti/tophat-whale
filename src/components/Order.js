@@ -12,7 +12,7 @@ class Order extends React.Component {
   handleOrder = () => {
     this.pushOrder();
     this.context.emptyCart();
-    this.context.setMessage('Tilaus lähetetty');
+    this.context.setMessage('Tilaus lähetetty!');
     this.setState({ nimi: '', osoite: '' });
   };
 
