@@ -1,5 +1,4 @@
 import React from 'react';
-import ContactFormik from './ContactFormik';
 
 export default function JotainMeniPieleen() {
   return (

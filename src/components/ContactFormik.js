@@ -1,17 +1,30 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import firebase from '../firebase';
 
-export default function ContactFormik() {
+function sendContact(values, reset) {
+  let ref = firebase.database().ref('contact');
+  const contactItem = {
+    nimi: values.nimi,
+    email: values.email,
+    palaute: values.palaute
+  };
+  return ref.push(contactItem);
+}
+
+export default function ContactFormik(props) {
   return (
-    <div>
+    <div className="container">
+      <h4 className="my-3">Ota yhteyttä</h4>
       <Formik
         initialValues={{ nimi: '', email: '', palaute: '' }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
+        onSubmit={(values, { setSubmitting, resetForm }) => {
+          sendContact(values).then(() => {
             setSubmitting(false);
-          }, 1000);
+            resetForm();
+            window.location.replace('/');
+          });
         }}
         validationSchema={Yup.object().shape({
           nimi: Yup.string().required('Pakollinen'),

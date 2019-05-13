@@ -9,36 +9,34 @@ import Cart from './components/Cart';
 import About from './components/About';
 import Login from './components/Login';
 import Details from './components/Details';
-import Contact from './components/Contact';
+import ContactFormik from './components/ContactFormik';
 import Order from './components/Order';
 import Message from './components/Message';
 import JotainMeniPieleen from './components/JotainMeniPieleen';
 import { ProductConsumer } from './context';
 
-class App extends React.Component {
-  render() {
-    return (
-      <Fragment>
-        <Navbar />
-        <ProductConsumer>
-          {value => (value.message.length > 0 ? <Message /> : null)}
-        </ProductConsumer>
-        <div className="flex-grow-1">
-          <Switch>
-            <Route exact path="/" component={ProductList} />
-            <Route path="/kori" component={Cart} />
-            <Route path="/about" component={About} />
-            <Route path="/contact" component={Contact} />
-            <Route path="/details/:id" component={Details} />
-            <Route path="/login" component={Login} />
-            <Route path="/order" component={Order} />
-            <Route component={JotainMeniPieleen} />
-          </Switch>
-        </div>
-        <Footer />
-      </Fragment>
-    );
-  }
+function App(props) {
+  return (
+    <Fragment>
+      <Navbar />
+      <ProductConsumer>
+        {value => (value.message.length > 0 ? <Message /> : null)}
+      </ProductConsumer>
+      <div className="flex-grow-1">
+        <Switch>
+          <Route exact path="/" component={ProductList} />
+          <Route path="/kori" component={Cart} />
+          <Route path="/about" component={About} />
+          <Route path="/contact" component={ContactFormik} />
+          <Route path="/details/:id" component={Details} />
+          <Route path="/login" component={Login} />
+          <Route path="/order" component={Order} />
+          <Route component={JotainMeniPieleen} />
+        </Switch>
+      </div>
+      <Footer />
+    </Fragment>
+  );
 }
 
 export default App;
